@@ -19,7 +19,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] p-8">
+    <body class="bg-[#FDFDFC] dark:bg-[#202020] text-[#1b1b18] p-8">
         {{ $slot }}
     </body>
 </html>
