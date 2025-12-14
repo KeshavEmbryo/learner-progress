@@ -10,7 +10,7 @@ class GetFilteredLearnersAction
     /**
      * @return Collection<Learner> $learners
      */
-    public function run(?string $search, string $sortOrder = 'desc'): Collection
+    public function run(?string $search, ?string $sortOrder = 'desc'): Collection
     {
         $learners = Learner::query()
             ->with('courses')

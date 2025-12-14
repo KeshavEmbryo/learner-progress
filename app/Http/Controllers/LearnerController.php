@@ -14,7 +14,7 @@ class LearnerController extends Controller
     ): View {
         $learners = $action->run(
             $request->input('search'),
-            $request->input('sort', 'desc')
+            $request->input('sort')
         );
 
         return view('learner-progress', [
