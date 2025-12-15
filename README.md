@@ -1,4 +1,4 @@
-# Learner Progress Dashboard - Coding Challenge
+# Learner Progress Dashboard
 
 ## Getting Started
 
