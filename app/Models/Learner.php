@@ -37,9 +37,19 @@ class Learner extends Model
     protected function averageProgress(): Attribute
     {
         return Attribute::make(
-            get: fn () => $this->courses->count() > 0
-                ? round($this->courses->sum('pivot.progress') / $this->courses->count())
-                : 0
+            get: function () {
+                if ($this->courses->count() === 0) {
+                    return 0;
+                }
+
+                $progressValues = $this->courses->pluck('pivot.progress')->filter(fn ($value) => $value !== null);
+
+                if ($progressValues->isEmpty()) {
+                    return 0;
+                }
+
+                return round($progressValues->sum() / $progressValues->count());
+            }
         );
     }
 
